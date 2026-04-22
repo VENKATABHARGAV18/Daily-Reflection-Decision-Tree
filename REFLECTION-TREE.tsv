@@ -1,0 +1,35 @@
+id	parentId	type	text	options	target	signal
+START	null	start	Good evening. Let’s reflect on your day.			
+
+A1_Q1	START	question	When something went wrong today, what did you do?	I tried to fix it|I waited|I felt stuck|I adapted		
+A1_Q2	A1_Q1	question	How did you feel about the situation?	In control|Helpless|Frustrated|Motivated		
+A1_Q3	A1_Q2	question	Did you try again to fix the situation?	Yes|No		
+A1_D1	A1_Q3	decision		answer=I tried to fix it|I adapted:A1_INT;answer=I waited|I felt stuck:A1_EXT		
+A1_INT	A1_D1	reflection	You showed control over your actions today.			axis1:internal
+A1_EXT	A1_D1	reflection	You relied more on external factors today.			axis1:external
+
+BRIDGE_1_2	A1_INT	bridge	Now let’s look at what you contributed today.		A2_Q1
+BRIDGE_1_2B	A1_EXT	bridge	Now let’s look at what you contributed today.		A2_Q1
+
+A2_Q1	BRIDGE_1_2	question	Which describes your day?	I helped someone|I did my work|I expected recognition|I felt ignored		
+A2_Q2	A2_Q1	question	What mattered more to you today?	Giving value|Getting appreciation|Finishing tasks|Being noticed		
+A2_Q3	A2_Q2	question	Did you expect something in return?	Yes|No		
+A2_D1	A2_Q3	decision		answer=I helped someone|Giving value:A2_CON;answer=I expected recognition|I felt ignored|Getting appreciation:A2_ENT		
+A2_CON	A2_D1	reflection	You focused on contribution today.			axis2:contribution
+A2_ENT	A2_D1	reflection	You focused more on what you received today.			axis2:entitlement
+
+BRIDGE_2_3	A2_CON	bridge	Now think beyond yourself.		A3_Q1
+BRIDGE_2_3B	A2_ENT	bridge	Now think beyond yourself.		A3_Q1
+
+A3_Q1	BRIDGE_2_3	question	Who did you think about most today?	Myself|My team|A colleague|Customer		
+A3_Q2	A3_Q1	question	What influenced your decisions today?	My goals|Team goals|Helping others|Personal benefit		
+A3_Q3	A3_Q2	question	Did you help someone today?	Yes|No		
+A3_D1	A3_Q3	decision		answer=Myself|Personal benefit:A3_SELF;answer=My team|A colleague|Customer|Helping others:A3_OTHER		
+A3_SELF	A3_D1	reflection	Your focus was mainly on yourself today.			axis3:self
+A3_OTHER	A3_D1	reflection	You considered others in your thinking today.			axis3:others
+
+SUMMARY	A3_OTHER	summary	Today you showed {axis1.dominant} mindset and {axis2.dominant} behavior.		
+END	SUMMARY	end	Good job reflecting. See you tomorrow.		
+
+SUMMARY2	A3_SELF	summary	Today you showed {axis1.dominant} mindset and {axis2.dominant} behavior.
+END	SUMMARY2	end	Good job reflecting. See you tomorrow.				
