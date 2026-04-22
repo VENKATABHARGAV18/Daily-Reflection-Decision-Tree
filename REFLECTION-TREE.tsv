@@ -28,8 +28,8 @@ A3_D1	A3_Q3	decision		answer=Myself|Personal benefit:A3_SELF;answer=My team|A co
 A3_SELF	A3_D1	reflection	Your focus was mainly on yourself today.			axis3:self
 A3_OTHER	A3_D1	reflection	You considered others in your thinking today.			axis3:others
 
-SUMMARY	A3_OTHER	summary	Today you showed {axis1.dominant} mindset and {axis2.dominant} behavior.		
+SUMMARY	A3_OTHER	summary	Today your responses reflect your behavioral patterns across control, contribution, and focus.		
 END	SUMMARY	end	Good job reflecting. See you tomorrow.		
 
-SUMMARY2	A3_SELF	summary	Today you showed {axis1.dominant} mindset and {axis2.dominant} behavior.
+SUMMARY2	A3_SELF	summary	Today your responses reflect your behavioral patterns across control, contribution, and focus.
 END	SUMMARY2	end	Good job reflecting. See you tomorrow.				
