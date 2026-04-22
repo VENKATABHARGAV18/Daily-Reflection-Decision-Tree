@@ -7,7 +7,11 @@ This project implements a deterministic decision tree system to structure daily 
 The goal is to transform subjective experiences into structured evaluation, ensuring clarity, consistency, and interpretability.
 
 ---
+## What this project demonstrates
 
+This project demonstrates how human reflection can be structured into a deterministic system using rule-based decision trees instead of relying on probabilistic AI models.
+
+---
 ## Objective
 
 The objective of this project is to:
