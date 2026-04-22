@@ -198,3 +198,8 @@ This project demonstrates how structured decision systems can convert unstructur
 * VS Code
 * draw.io (for flowchart)
 * GitHub
+
+---
+## Design Focus
+
+The system prioritizes interpretability and structured reasoning over automation, ensuring that each decision can be traced and understood.
